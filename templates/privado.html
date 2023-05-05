@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block titulo %}privado{% endblock %}
+
+{% block cabecera %}Bienvenido al sitio{% endblock %}
+
+{% block contenido %}
+<br><br>
+<p>Bienvenido {{usuario.username|title}}</p>
+
+{% endblock %}

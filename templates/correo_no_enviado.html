@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block titulo %}Falló{% endblock %}
+
+{% block cabecera %}Falló el envio de correo{% endblock %}
+
+{% block contenido %}
+<br><br>
+<p>Su mensaje no pudo enviarse, pruebe más tarde</p>
+
+<img src="{% static 'img/negativo.jpg' %}">
+
+{% endblock %}

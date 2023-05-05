@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block titulo %}Enviado{% endblock %}
+
+{% block cabecera %}Correo enviado con éxito{% endblock %}
+
+{% block contenido %}
+<br><br>
+<p>Gracias por ponerse en contacto, en breve contestaremos</p>
+
+<img src="{% static 'img/brindis_copas.jpg' %}">
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block titulo %}registro{% endblock%}
+
+{% block cabecera %} Registrarse en el sitio{% endblock %}
+
+{% block contenido %}
+<br><br>
+
+<form id="formulario" method="post" action="">{% csrf_token %}
+
+	{% for campo in formulario %}
+		<p>
+			{{campo.label_tag}}<br>
+			{{campo}}
+			{% for error in campo.errors %}
+				{{error}}
+			{% endfor %}
+		</p>
+	{% endfor %}
+	<p><input type="submit" value="Registrarse"></p>
+</form>
+
+
+{% endblock %}

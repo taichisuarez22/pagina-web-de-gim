@@ -1,0 +1,38 @@
+<!--! inicio de la barra de navegacion -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">La Ceiba</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLinks" aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div id="navbarLinks" class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Servicios</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--! fin de la barra de navegacion -->
+
+{% extends "base.html" %} {% load static %} {% block titulo %} Resultados {% endblock %} {% block cabecera %} Su busqueda {% endblock %} {% block contenido %}
+<br><br>
+
+
+<p> su busqueda arroja los siguientes resultados: </p>
+
+{% if Instrucciones %}
+<p>Instruccion{{Instrucciones|pluralize}} encontrado{{Instrucciones|pluralize}}: {{Instruccioneslength}}</p>
+{% for a in Instrucciones %}
+<div class="contenedor">
+    <p>clase:{{a.clase}}</p>
+    <p>profesor: {{a.profesor}}</p>
+    <p>precio: {{a.precio}} pesos</p>
+    <img src="{{a.foto.url}}"> {% endfor %} {% else %}
+    <p>Su búsqueda no arroja resultados</p>
+
+    {% endif %} {% endblock %}
